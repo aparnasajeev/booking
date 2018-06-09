@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class details {
     
     
-          boardingPass b1=new boardingPass();
+    boardingPass b1=new boardingPass();
     Scanner inp=new Scanner(System.in);
     /**
      * 
