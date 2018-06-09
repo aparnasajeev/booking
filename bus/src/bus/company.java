@@ -136,5 +136,50 @@ class company {
             }
           
     }
+     /**
+     * 
+     * @param i parameter is used to hold bus number
+     * @param j parameter is used to hold destination
+     * @param seatno parameter is used hold seat number
+     */
+     int displayseat(int i,int j,int seatno)
+    {
+       
+        int x;//declaring variable i 
+        /**
+         * for loop for displaying all 32 seats
+         */
+        for(x=0;x<32;x++)
+        {
+            if(x%2==0)
+            {
+                System.out.println("\t");
+            }
+            else
+            {
+                System.out.println("\t\n");
+            }
+            /**
+             * check if the seat is reserved.If it is not mark it with [0]
+             */
+            if(a[i][j][day][x]!=1)
+            {
+                System.out.print("[]"+x);
+            }
+            else
+                System.out.print("[0]"+x);
+            }
+             return seatno;
+                    
+        }
    
-}
+    }
+
+    
+    
+
+
+
+   
+   
+
