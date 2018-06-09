@@ -73,7 +73,7 @@ public class testbus {
       @Test
      public void test_displayforTELSON()
      {          
-        assertEquals(700,b1.displayinfo("shruti","9844065342",19,4,700));
+        assertEquals(700,b1.displayinfo("shruti","9844065342",18,4,700));
      }
      
       @Test
