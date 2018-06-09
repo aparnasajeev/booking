@@ -12,7 +12,11 @@ import java.util.Scanner;
  * @author Shriya
  */
 class company {
+    details d1=new details();
     Scanner inp=new Scanner(System.in);
+    int i,j,day = 0;//declaraling variables of datatype integer
+     int a[][][][]=new int[10][10][400][60];//declaraing multiple dimensional array of type integer
+                                            
      /**
       * method SRS  is used for selecting the destination to be traveled through an SRS company bus
       */
@@ -22,8 +26,7 @@ class company {
         System.out.println("ENTER THE DESTINATION\n 1.Belgaum to Banglore\n 2.Belgaum to Mumbai\n 3.Belgaum to Pune");//displaying menu for selecting the destination
         temp=inp.nextInt();//temp variable is used to hold the choice for the destination
         int amt=800;//variable amt is initialized with the amount specified by the BUS COMPANY
-       book(1,temp,amt);
-        
+        book(1,temp,amt);//calling method book used to book seat for travelling
     }
     
      /**
@@ -35,7 +38,7 @@ class company {
         System.out.println("ENTER THE DESTINATION\n 1.Belgaum to Banglore\n 2.Belgaum to Mumbai\n 3.Belgaum to Pune");//displaying menu for selecting the destination
         temp=inp.nextInt();//temp variable is used to hold the choice for the destination
         int amt=750;//variable amt is initialized with the amount specified by the BUS COMPANY
-        
+        book(2,temp,amt);//calling method book used to book seat for travelling
     }
     
       /**
@@ -47,8 +50,7 @@ class company {
         System.out.println("ENTER THE DESTINATION\n 1.Belgaum to Banglore\n 2.Belgaum to Mumbai\n 3.Belgaum to Pune");//displaying menu for selecting the destination
         temp=inp.nextInt();//temp variable is used to hold the choice for the destination
         int amt=1000;//variable amt is initialized with the amount specified by the BUS COMPANY
-        
-        
+        book(3,temp,amt);//calling method book used to book seat for travelling
     }
     
      /**
@@ -60,7 +62,79 @@ class company {
         System.out.println("ENTER THE DESTINATION\n 1.Belgaum to Banglore\n 2.Belgaum to Mumbai\n 3.Belgaum to Pune");//displaying menu for selecting the destination
         temp=inp.nextInt();//temp variable is used to hold the choice for the destination
         int amt=700;//variable amt is initialized with the amount specified by the BUS COMPANY
-       
-        
+        book(4,temp,amt);//calling method book used to book seat for travelling
     }
+    
+   /**
+     * 
+     * @param p parameter holds the bus company number 
+     * @param temp parameter holds the destination selected by the user 
+     * @param amt parameter holds the amount to be paid by the user for traveling to the desired destination
+     */
+    void book(int p,int temp,int amt)
+    {
+        int tickets,month,x,date,seatno,z=1;//declaration and initialization of variables
+       
+        i=p;
+        j=temp;//initializing j with the value of temp
+        System.out.print("\nEnter the month for travelling:");//display message for the user to enter the month of travelling
+        month=inp.nextInt();//month varaiable is used to hold the input for above message
+        
+        /**
+         * switch statement is used to choose the month according to the input given by user
+         */
+        switch(month)
+        {
+            case 1:day=0;break;
+            case 2:day=31;break;
+            case 3:day=59;break;
+            case 4:day=90;break;
+            case 5:day=120;break;
+            case 6:day=151;break;
+            case 7:day=181;break;
+            case 8:day=212;break;
+            case 9:day=243;break;
+            case 10:day=273;break;
+            case 11:day=304;break;
+            case 12:day=334;break;
+        }
+            
+            System.out.print("\nEnter the date of travelling:");//display message for the user to enter the date of travelling
+            date=inp.nextInt();//date varaiable is used to hold the input for above message
+            day= day+date;//day is updated with the date the user wants to travel
+            
+            
+            System.out.println("SEAT ARRANGEMENT");
+            displayseat(i,j,day);//calling display method for displaying the seat arrangement
+            
+            System.out.print("\nEnter the number of tickets u want:");//display message for the user to enter the number of tickets they want to book 
+            tickets=inp.nextInt();//tickets varaiable is used to hold the input for above message
+            /**
+             * for loop is used for accepting user details for the number of tickets mentioned by the user
+             */
+            for(i=1;i<=tickets;i++)
+            {
+                System.out.print("\nEnter seat number you want:");//display message for the user to enter the seat number
+                seatno=inp.nextInt();//seatno varaiable is used to hold the input for above message
+                /**
+                 * if statement is used to check whether the seat mentioned by the user is already reserved or not
+                 */
+                if(a[i][j][day][seatno]!=1)
+                {
+                    a[i][j][day][seatno]=1;
+                    displayseat(i,j,day);//calling display method which will display the seat arrangement after a seat is booked.The seat booked will be marked with [0]
+                    
+                    System.out.println("\nYour ticket number is:"+z);//display the ticket number once a seat is booked
+                    d1.enterInfo(tickets,month,z,seatno, amt);//calling enterInfo method for entering the details of users
+                    z++;//incrementing ticket number for next entry
+                }
+                else
+                {
+                    System.out.println("Seat is already reserved.Choose some other seat");//displaying the message if the seat mentioned by the user is already been booked
+                }
+                
+            }
+          
+    }
+   
 }
