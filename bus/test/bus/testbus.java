@@ -61,15 +61,20 @@ public class testbus {
       @Test
      public void test_displayforVRL()
      {          
-        assertEquals(750,b1.displayinfo("sanjana","9685769476",5,1,750));
+        assertEquals(750,b1.displayinfo("sanjana","9685769476",22,2,750));
        
      }
       @Test
      public void test_displayforPAI()
      {          
-        assertEquals(1000,b1.displayinfo("pooja","7465987349",5,1,1000));
+        assertEquals(1000,b1.displayinfo("pooja","7465987349",8,3,1000));
      }
      
+      @Test
+     public void test_displayforTELSON()
+     {          
+        assertEquals(700,b1.displayinfo("shruti","9844065342",19,4,700));
+     }
      
       @Test
      public void test_displayseat()
