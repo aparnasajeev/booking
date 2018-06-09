@@ -12,8 +12,9 @@ import java.util.Scanner;
  * @author Shriya
  */
 class company {
-    details d1=new details();
+    
     Scanner inp=new Scanner(System.in);
+    details d1=new details();
     int i,j,day = 0;//declaraling variables of datatype integer
      int a[][][][]=new int[10][10][400][60];//declaraing multiple dimensional array of type integer
                                             
@@ -75,7 +76,7 @@ class company {
     {
         int tickets,month,x,date,seatno,z=1;//declaration and initialization of variables
        
-        i=p;
+        //i=p;
         j=temp;//initializing j with the value of temp
         System.out.print("\nEnter the month for travelling:");//display message for the user to enter the month of travelling
         month=inp.nextInt();//month varaiable is used to hold the input for above message
@@ -105,7 +106,7 @@ class company {
             
             
             System.out.println("SEAT ARRANGEMENT");
-            displayseat(i,j,day);//calling display method for displaying the seat arrangement
+            displayseat(p,j,day);//calling display method for displaying the seat arrangement
             
             System.out.print("\nEnter the number of tickets u want:");//display message for the user to enter the number of tickets they want to book 
             tickets=inp.nextInt();//tickets varaiable is used to hold the input for above message
@@ -119,10 +120,10 @@ class company {
                 /**
                  * if statement is used to check whether the seat mentioned by the user is already reserved or not
                  */
-                if(a[i][j][day][seatno]!=1)
+                if(a[p][j][day][seatno]!=1)
                 {
-                    a[i][j][day][seatno]=1;
-                    displayseat(i,j,day);//calling display method which will display the seat arrangement after a seat is booked.The seat booked will be marked with [0]
+                    a[p][j][day][seatno]=1;
+                    displayseat(p,j,day);//calling display method which will display the seat arrangement after a seat is booked.The seat booked will be marked with [0]
                     
                     System.out.println("\nYour ticket number is:"+z);//display the ticket number once a seat is booked
                     d1.enterInfo(tickets,month,z,seatno, amt);//calling enterInfo method for entering the details of users
