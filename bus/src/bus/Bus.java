@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Shantanu
+ * @author aparnasajeev
  */
 public class Bus {
 
