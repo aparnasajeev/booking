@@ -16,6 +16,8 @@ public class Bus {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+          details d1=new details();
     }
     
 }
