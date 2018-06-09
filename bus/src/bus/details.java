@@ -36,7 +36,7 @@ public class details {
                phno=inp.next();//phno varaiable is used to hold the input for above message
                System.out.println("Your seat has been reserved");
                
-             int amount=  b1.displayinfo(name,phno,seatno,z,amt);//calling method displayinfo from boardingpass class
+               b1.displayinfo(name,phno,seatno,z,amt);//calling method displayinfo from boardingpass class
     
     }
    
