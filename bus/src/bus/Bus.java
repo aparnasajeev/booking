@@ -23,7 +23,7 @@ public class Bus {
            company c1=new company();
            System.out.println("WELCOME");
            /**
-            * while loop displays the menu continuously until the user selects exit option
+            * while loop displays the menu till the user selects the exit option
             */
                Exit:
              while(true)
