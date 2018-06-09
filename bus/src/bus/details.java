@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class details {
     
     
-          boardingPass b1=new boardingPass();
+    boardingPass b1=new boardingPass();
     Scanner inp=new Scanner(System.in);
     /**
      * 
@@ -24,7 +24,7 @@ public class details {
      * @param seatno parameter holds the seat number
      * @param amt parameter holds the amount to be paid by the user
      */
-    int enterInfo(int n,int month,int z,int seatno,int amt)
+    void enterInfo(int n,int month,int z,int seatno,int amt)
     {
         String name;//declaring variable name of data type String
         int i;//declaring variable of type int
@@ -37,7 +37,7 @@ public class details {
                System.out.println("Your seat has been reserved");
                
              int amount=  b1.displayinfo(name,phno,seatno,z,amt);//calling method displayinfo from boardingpass class
-         return amount;
+    
     }
    
 }
