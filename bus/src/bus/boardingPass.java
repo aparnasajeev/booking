@@ -27,7 +27,7 @@ public class boardingPass {
         System.out.println("Seat number:"+seatNo);//displays seat number
         System.out.println("Phone number:"+phNo);//displays user phone number
         System.out.println("Month of travelling:"+month);//displays month of travelling
-        System.out.println("Amount to be paid: Rs"+amt+"/-");//displays amount to be paid
+        System.out.println("Amount to be paid: Rs"+amt+"/-");//displays amount to be paid by the user
         
         /**
          * if else statement is used to display the user destination according to the choice made by the user
