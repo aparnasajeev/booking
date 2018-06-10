@@ -14,29 +14,29 @@ import java.util.Scanner;
 public class details {
     
     
-    boardingPass b1=new boardingPass();
-    Scanner inp=new Scanner(System.in);
+    boardingPass b1=new boardingPass();//instantiation,creating an object
+    Scanner inp=new Scanner(System.in);//it is a class in java.util packageused for obtaining input of primitive types
     /**
-     * 
+     * method enterInfo is used to take the user details for bus reservation and displaying the bill
      * @param n parameter holds the number of tickets mentioned by the the user
      * @param month parameter holds the month mentioned by the user 
      * @param z parameter holds the ticket number
-     * @param seatno parameter holds the seat number
+     * @param seatNo parameter holds the seat number
      * @param amt parameter holds the amount to be paid by the user
      */
-    void enterInfo(int n,int month,int z,int seatno,int amt)
+    public void enterInfo(int n,int month,int z,int seatNo,int amt,int temp)
     {
         String name;//declaring variable name of data type String
         int i;//declaring variable of type int
-        String phno;//declaraing variable phno of type String
+        String phNo;//declaraing variable phno of type String
                 
                System.out.print("Enter your name:");//display message for the user to enter their name
                name=inp.next();//name varaiable is used to hold the input for above message
                System.out.print("Enter your phone number:");//display message for the user to enter their phone number
-               phno=inp.next();//phno varaiable is used to hold the input for above message
+               phNo=inp.next();//phno varaiable is used to hold the input for above message
                System.out.println("Your seat has been reserved");
                
-               b1.displayinfo(name,phno,seatno,z,amt);//calling method displayinfo from boardingpass class
+               b1.displayInfo(name,phNo,seatNo,z,amt,month,temp);//calling method displayinfo from boardingpass class
     
     }
    
