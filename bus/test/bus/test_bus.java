@@ -11,8 +11,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import java.util.Scanner;
-
+ import java.util.Scanner;
 /**
  *
  * @author Shantanu
@@ -75,4 +74,33 @@ public class test_bus {
      {          
         assertEquals(700,b1.displayinfo("shruti","9844075361",17,3,700));
      }
-}
+
+    @Test
+     public void test_displayseat()
+     {          
+        assertEquals(4,c1.displayseat(2,1,4));
+        assertEquals(12,c1.displayseat(2,1,12));
+        assertEquals(47,c1.displayseat(2,1,47));
+        assertEquals(8,c1.displayseat(2,1,8));
+        
+        
+       
+     }
+        @Test
+     public void test_displayseat_and_displaybill()
+     {          
+        assertEquals(4,c1.displayseat(2,1,4));// in this function 4 is given as seat number 
+        assertEquals(800,b1.displayinfo("ram","6754557434",4,1,800));//here the total amount is printed and the seat number   is passed from displayseat function
+         assertEquals(47,c1.displayseat(2,1,47));          
+        assertEquals(850,b1.displayinfo("mohan","6044653876",47,1,850));
+         assertEquals(8,c1.displayseat(2,1,8));   
+         assertEquals(1000,b1.displayinfo("pooja","7465987349",5,1,1000));                                                          // is passed from displayseat function
+
+     }
+
+    
+}   
+       
+     
+        
+        
