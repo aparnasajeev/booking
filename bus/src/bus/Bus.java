@@ -20,7 +20,7 @@ public class Bus {
         // TODO code application logic here
         
               int temp,t;//declaration of variables temp and t
-           company c1=new company();
+           company c1=new company();//instantiation,creating an object
            System.out.println("WELCOME");
            /**
             * while loop displays the menu till the user selects the exit option
@@ -28,7 +28,7 @@ public class Bus {
                Exit:
              while(true)
              {
-                 Scanner inp = new Scanner(System.in);
+                 Scanner inp = new Scanner(System.in);//it is a class in java.util packageused for obtaining input of primitive types                 
                  System.out.println("1.BUS RESERVATION\n 2.EXIT\n");
                  t=inp.nextInt();//t variable is used to hold the choice made for selection of above two options
                  /**
