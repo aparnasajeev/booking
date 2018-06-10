@@ -11,17 +11,17 @@ import java.util.Scanner;
  *
  * @author Shriya
  */
-class company {
+public class company {
     
-    Scanner inp=new Scanner(System.in);
-    details d1=new details();
+    Scanner inp=new Scanner(System.in);//it is a class in java.util packageused for obtaining input of primitive types
+    details d1=new details();//instantiation,creating an object
     int i,j,day = 0;//declaraling variables of datatype integer
      int a[][][][]=new int[10][10][400][60];//declaraing multiple dimensional array of type integer
                                             
      /**
       * method SRS  is used for selecting the destination to be traveled through an SRS company bus
       */
-    void srs()
+    public void srs()
     {
         int temp;//declaration of variable temp//displaying menu for selecting th
         System.out.println("ENTER THE DESTINATION\n 1.Belgaum to Banglore\n 2.Belgaum to Mumbai\n 3.Belgaum to Pune");//displaying menu for selecting the destination
@@ -33,7 +33,7 @@ class company {
      /**
       * method VRL  is used for selecting the destination to be traveled through an VRL company bus
       */
-    void vrl()
+    public void vrl()
     {
         int temp;//declaration of variable temp
         System.out.println("ENTER THE DESTINATION\n 1.Belgaum to Banglore\n 2.Belgaum to Mumbai\n 3.Belgaum to Pune");//displaying menu for selecting the destination
@@ -45,7 +45,7 @@ class company {
       /**
       * method PAI  is used for selecting the destination to be traveled through an PAI company bus
       */
-    void pai()
+    public void pai()
     {
         int temp;//declaration of variable temp
         System.out.println("ENTER THE DESTINATION\n 1.Belgaum to Banglore\n 2.Belgaum to Mumbai\n 3.Belgaum to Pune");//displaying menu for selecting the destination
@@ -57,7 +57,7 @@ class company {
      /**
       * method TELSON  is used for selecting the destination to be traveled through an TELSON company bus
       */
-    void telson()
+    public void telson()
     {
         int temp;//declaration of variable temp
         System.out.println("ENTER THE DESTINATION\n 1.Belgaum to Banglore\n 2.Belgaum to Mumbai\n 3.Belgaum to Pune");//displaying menu for selecting the destination
@@ -67,14 +67,15 @@ class company {
     }
     
    /**
-     * 
+     *  method book is used for booking seats by entering the month,day,number of tickets they want and the seat number
+     * the passengers are alloted with seat depending upon their availability
      * @param p parameter holds the bus company number 
      * @param temp parameter holds the destination selected by the user 
      * @param amt parameter holds the amount to be paid by the user for traveling to the desired destination
      */
-    void book(int p,int temp,int amt)
+    public void book(int p,int temp,int amt)
     {
-        int tickets,month,x,date,seatno,z=1;//declaration and initialization of variables
+        int tickets,month,x,date,seatNo,z=1;//declaration and initialization of variables
        
         //i=p;
         j=temp;//initializing j with the value of temp
@@ -106,7 +107,7 @@ class company {
             
             
             System.out.println("SEAT ARRANGEMENT");
-            displayseat(p,j,day);//calling display method for displaying the seat arrangement
+            displaySeat(p,j,day);//calling display method for displaying the seat arrangement
             
             System.out.print("\nEnter the number of tickets u want:");//display message for the user to enter the number of tickets they want to book 
             tickets=inp.nextInt();//tickets varaiable is used to hold the input for above message
@@ -116,17 +117,17 @@ class company {
             for(i=1;i<=tickets;i++)
             {
                 System.out.print("\nEnter seat number you want:");//display message for the user to enter the seat number
-                seatno=inp.nextInt();//seatno varaiable is used to hold the input for above message
+                seatNo=inp.nextInt();//seatno varaiable is used to hold the input for above message
                 /**
                  * if statement is used to check whether the seat mentioned by the user is already reserved or not
                  */
-                if(a[p][j][day][seatno]!=1)
+                if(a[p][j][day][seatNo]!=1)
                 {
-                    a[p][j][day][seatno]=1;
-                    displayseat(p,j,day);//calling display method which will display the seat arrangement after a seat is booked.The seat booked will be marked with [0]
+                    a[p][j][day][seatNo]=1;
+                    displaySeat(p,j,day);//calling display method which will display the seat arrangement after a seat is booked.The seat booked will be marked with [0]
                     
                     System.out.println("\nYour ticket number is:"+z);//display the ticket number once a seat is booked
-                    d1.enterInfo(tickets,month,z,seatno, amt);//calling enterInfo method for entering the details of users
+                    d1.enterInfo(tickets,month,z,seatNo, amt,temp);//calling enterInfo method for entering the details of users
                     z++;//incrementing ticket number for next entry
                 }
                 else
@@ -138,12 +139,13 @@ class company {
           
     }
      /**
-     * 
+     * method displaySeat is used for displaying the arrangement of seats and thus confirms the seat reservation
      * @param i parameter is used to hold bus number
      * @param j parameter is used to hold destination
-     * @param seatno parameter is used hold seat number
+     * @param seatNo parameter is used hold seat number
+     * 
      */
-     int displayseat(int i,int j,int seatno)
+     public int displaySeat(int i,int j,int seatNo)
     {
        
         int x;//declaring variable i 
@@ -170,7 +172,7 @@ class company {
             else
                 System.out.print("[0]"+x);
             }
-             return seatno;
+             return seatNo;
                     
         }
    
